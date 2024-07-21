@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>sigma-magic</title>
+	<link rel="icon" type="image/png" href="../img/fire.png" sizes="32x32">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #000;
+			margin: 0;
+			padding: 0;
+			/* overflow: hidden; */
+			background: url(../img/bg2.jpg) no-repeat;
+			background-size: 100% 100%;
+
+		}
+
+
+
+		.angel {
+			position: absolute;
+			z-index: 9;
+			/* width: 180px; */
+			height: 180px;
+		}
+
+		.fullscreenvideo {
+
+			position: absolute;
+
+			width: 100%;
+
+			height: 100%;
+
+		}
+
+		.videocontainer {
+
+			position: fixed;
+
+			width: 100%;
+
+			height: 100%;
+
+			overflow: hidden;
+			z-index: -1;
+			/* z-index: -100; */
+
+		}
+
+		.videocontainer:before {
+
+			content: "";
+
+			position: absolute;
+
+			width: 100%;
+
+			height: 100%;
+
+			display: block;
+
+			z-index: -1;
+
+			top: 0;
+
+			left: 0;
+
+		}
+
+		.zu {
+
+			display: flex;
+
+			flex-direction: column;
+			align-items: center;
+
+			justify-content: center;
+
+			/* height: 100vh; */
+			height: 1000px;
+
+		}
+
+		.bp1 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+
+			width: 700px;
+			height: 400px;
+		}
+
+		.bp1>div {
+			position: relative;
+			width: 140px;
+			height: 80px;
+
+			background: url(../img/dragon.gif) no-repeat;
+			background-size: 700px 400px;
+
+			transition: 0.8s ease;
+
+		}
+
+		.bp1.mik {
+			width: 780px;
+			height: 480px;
+		}
+
+		.bp1.mik .bp2 {
+			transform: rotatez(360deg);
+		}
+
+
+		.fixed {
+
+			position: relative;
+
+
+
+		}
+
+		.bp2::after {
+			content: '';
+			background-color: #f6e58d;
+			position: absolute;
+			top: 5px;
+			right: -10px;
+			height: 100%;
+			width: 10px;
+			transform: skewY(45deg);
+
+		}
+
+		.bp2::before {
+			content: '';
+			background-color: #f9ca24;
+			position: absolute;
+			bottom: -10px;
+			left: 5.2px;
+			height: 10px;
+			width: 100%;
+			transform: skewX(45deg);
+		}
+
+
+
+		.nk {
+			position: absolute;
+			z-index: 10;
+			left: 50%;
+
+			margin-top: 50px;
+			margin-left: -60px;
+
+			display: block;
+			width: 120px;
+			height: 120px;
+
+			background-color: #00A0F4;
+
+			border: 15px solid #38D6EC;
+
+			box-shadow: 0px 0px 20px 6px #10E9FF;
+
+			font: 25px "Comic Sans MS";
+
+			color: #fff;
+			text-align: center;
+
+			border-radius: 120px;
+
+
+			transition: .1s;
+
+
+		}
+
+
+		.nk:active {
+
+			background-color: #062C65;
+			box-shadow: none;
+		}
+
+		@media screen and (orientation: portrait) {
+
+
+			.zu {
+				height: 100vh;
+			}
+
+			.nk {
+				margin-top: 240px;
+			}
+
+			/* .angel {
+				display: none;
+			} */
+
+			.videocontainer {
+				display: none;
+			}
+
+			body {
+				background: url(./img/phone3.jpg) no-repeat;
+				background-size: 100% 100%;
+				margin: 10px;
+				overflow: hidden;
+			}
+		}
+
+		marquee {
+			position: absolute;
+			top: 50%;
+			color: #fff;
+			font: 25px "Comic Sans MS";
+			font-weight: bold;
+			z-index: 10;
+		}
+
+		.cont {
+
+			margin: 0;
+			padding: 0;
+			display: none;
+		}
+	</style>
+</head>
+
+<body id="body">
+	<!-- <marquee scrollamount="16" loop="1">页面加载中，请稍等(Loading),author:Sigma-soldier</marquee> -->
+	<div class="cont">
+		<!-- <marquee scrollamount="12">author:Sigma-soldier</marquee> -->
+		<!-- <div class="videocontainer">
+			<video class="fullscreenvideo" id="bgvid" playsinline="" autoplay="" muted="" loop="">
+				<source src="img/xuan.mp4" type="video/mp4">
+			</video>
+		</div> -->
+
+		<!-- <img src="./img/pfire.gif" alt="" class="angel"> -->
+
+
+		<div class="fixed"><button class="nk">click</button></div>
+		<div class="zu">
+			<div id="bp1" class="bp1 mik"></div>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
+<script src="../js/jquery-3.6.1.min.js"></script>
+
+
+
+<script>
+	// $(function () {
+	// 	//定义节流阀
+	// 	let timer = null;
+
+	// 	$(document).on('mousemove', function (e) {
+	// 		if (timer) {
+	// 			return
+	// 		}
+	// 		//设置图片位置
+	// 		timer = setTimeout(function () {
+	// 			$(".angel").css('left', e.pageX + 'px').css('top', e.pageY + 'px');
+	// 			timer = null;
+	// 		}, 16)
+	// 	})
+
+
+	// })
+	$(function () {
+		$('.cont').fadeIn(2000)
+	})
+
+	let bp99 = document.querySelector('.bp1');
+	let bula = document.querySelector('.nk');
+	bula.addEventListener('click', function () {
+		bp99.classList.toggle('mik');
+		// $('.bp2:eq(8)').css("backgroundPosition", " -420px -80px");
+	})
+	for (let m = 0; m < 5; m++) {
+		for (let n = 0; n < 5; n++) {
+
+			let bp2 = document.createElement('div');
+			bp2.classList.add('bp2')
+			bp2.style.backgroundPosition = `${-n * 140}px ${-m * 80}px`;
+
+			bp99.append(bp2)
+		}
+	}
+	// $('.bp2:eq(8)').css("backgroundPosition", " -420px -96px");
+	$('.cont').css("opacity", 1)
+</script>

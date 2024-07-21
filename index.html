@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wayne-Sigma-Home</title>
+    <link rel="icon" type="image/png" href="./img/dogx1.png" sizes="32x32">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section class="showcase">
+        <div class="video-container">
+            <video src="./img/xuan.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <div class="pho"></div>
+            <div class="text1">
+
+                <h2>Hello! I am Wayne.Welcome to my home page!</h2>
+                <a href="#about" class="btn">More</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about">
+        <h1>Introduction</h1>
+        <h2>I am a college student who loves Front-end development.</h2>
+        <div class="social">Project:&nbsp;&nbsp;
+            <a href="./pic-div/main.html">
+                <div class="icon1"> <img src="./img/pic-div.png" alt="" width="32px">
+                    &nbsp;&nbsp;&nbsp;Image segmentation</div>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="only">
+                <a href="./data-visual/index.html">
+                    <div class="icon1"> <img src="./img/bing.png" alt="" width="32px">
+                        &nbsp;&nbsp; Data visualization</div>
+
+                </a>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src="./js/jquery-3.6.1.min.js"></script>
+<script>
+    $('#only').click(function () {
+        alert("This project is supported only in PC.")
+    })
+</script>
+
+</html>
